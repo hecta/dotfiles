@@ -71,6 +71,9 @@ BG_COLE="$(tput setab 236)"
 
 NC="$(tput sgr0)" # No Color
 
-PS1='\e[44\[$EGGSHELL\][\t] \[$FROSTEDBLUE\]\u@\h \[$SALMON\]\W\[$NC\]\[$EGGSHELL\] \$\[$NC\] '
+PS1='\[$FROSTEDBLUE\][\[$EGGSHELL\]\A\[$FROSTEDBLUE\]]\[$FROSTEDBLUE\][\[$EGGSHELL\]\u\[$FROSTEDBLUE\]@\[$EGGSHELL\]\h \[$FROSTEDBLUE\]\[$PALEVIOLET\]\W\[$FROSTEDBLUE\]]\[$EGGSHELL\]\$\[$NC\] '
+#PS1='\[$FROSTEDBLUE\][\[$EGGSHELL\]\A\[$FROSTEDBLUE\]] \[$EGGSHELL\]\u\[$FROSTEDBLUE\]@\[$EGGSHELL\]\h \[$FROSTEDBLUE\][\[$SALMON\]\W\[$FROSTEDBLUE\]] [\]\[$EGGSHELL\]\$\[$FROSTEDBLUE\]]\[$NC\] '
+#PS1='\[$FROSTEDBLUE\][\[$EGGSHELL\]\A\[$FROSTEDBLUE\]] \[$FROSTEDBLUE\][\[$EGGSHELL\]\u\[$FROSTEDBLUE\]@\[$EGGSHELL\]\h\[$FROSTEDBLUE\]] \[$FROSTEDBLUE\][\[$SALMON\]\W\[$FROSTEDBLUE\]] [\]\[$EGGSHELL\]\$\[$FROSTEDBLUE\]] \[$NC\] '
+#PS1='\[$EGGSHELL\][\t] \[$FROSTEDBLUE\]\u@\h \[$SALMON\]\W\[$NC\]\[$EGGSHELL\] \$\[$NC\] '
 #PS1='\[$LightBlue\]\u@\h [\W]\$\[$NC\] '
 #PS1='\[\e[41m\]\[\e[1;37m\] \u \[\e[47m\]\[\e[1;30m\] \W \[\e[0m\]\[\e[1;37m\]\[\e[42m\] # \[\e[0m\] @ \[\e[41m\]\[\e[1;33m\]\h\[\033[0m\033[0;32m\] ▶\[\033[0m\] ' 
