@@ -7,20 +7,27 @@
 # alias less='less -r'                          # raw control characters
 # alias whence='type -a'                        # where, of a sort
 
+LS="--color=auto"
+
+case $(uname -s) in
+    Darwin|FreeBSD|OpenBSD) $LS="";;
+    *) ;;
+esac
+
 if [ "$TERM" != "dumb" ]; then
     [ -e "$HOME/.dircolors" ] && DIR_COLORS="$HOME/.dircolors"
     [ -e "$DIR_COLORS" ] || DIR_COLORS=""
     eval "`dircolors -b $DIR_COLORS`"
-    alias grep='grep --color'                     # show differences in colour
-    alias egrep='egrep --color=auto'              # show differences in colour
-    alias fgrep='fgrep --color=auto'              # show differences in colour
+    alias grep='grep $LS'                     # show differences in colour
+    alias egrep='egrep $LS'              # show differences in colour
+    alias fgrep='fgrep $LS'              # show differences in colour
 
 
-    alias ll='ls -lF'
-    alias la='ls -AF'                             # all but . and ..
-    alias l='ls -CF'                 
-    alias ltr='ls -ltrF'    
-    alias ls='ls -F'
+    alias ll='ls -lF $LS'
+    alias la='ls -AF $LS'                             # all but . and ..
+    alias l='ls -CF $LS'                 
+    alias ltr='ls -ltrF $LS'    
+    alias ls='ls -F $LS'
 fi
 
 alias diskspace='du -S |sort -n -r|more'
