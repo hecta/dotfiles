@@ -7,10 +7,10 @@
 # alias less='less -r'                          # raw control characters
 # alias whence='type -a'                        # where, of a sort
 
-LS="--color=auto"
+LS=" --color=auto"
 
 case $(uname -s) in
-    Darwin|FreeBSD|OpenBSD) $LS="";;
+    Darwin|FreeBSD|OpenBSD) LS="";;
     *) ;;
 esac
 
@@ -23,7 +23,7 @@ if [ "$TERM" != "dumb" ]; then
     alias fgrep='fgrep $LS'              # show differences in colour
 
 
-    alias ll='ls -lF $LS'
+    alias ll='ls -lF$LS'
     alias la='ls -AF $LS'                             # all but . and ..
     alias l='ls -CF $LS'                 
     alias ltr='ls -ltrF $LS'    
