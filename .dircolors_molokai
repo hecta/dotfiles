@@ -52,11 +52,8 @@ TERM rxvt-unicode-256color
 NORMAL 00;38;5;250 # no color code at all
 #FILE 00 # regular file: use no color at all
 RESET 0 # reset to "normal" color
-
-# directory paleviolet (132)
-DIR 01;38;5;96
-# sym link eggshell (188)
-LINK 01;38;5;153
+DIR 01;38;5;198 # directory (PINK)
+LINK 01;38;5;37 # symbolic link. (If you set this to 'target' instead of a
  # numerical value, the color is as for the file pointed to.)
 MULTIHARDLINK 00 # regular file with more than one link
 FIFO 48;5;230;38;5;136;01 # pipe
@@ -73,90 +70,93 @@ OTHER_WRITABLE 48;5;235;38;5;33 # dir that is other-writable (o+w) and not stick
 STICKY 48;5;33;38;5;230 # dir with the sticky bit set (+t) and not other-writable
 # This is for files with execute permission:
 
+
+# This is for files with execute permission:
+
 # List any file extensions like '.gz' or '.tar' that you would like ls
 # to colorize below. Put the extension, a space, and the color init string.
 # (and any comments you want to add after a '#')
-.tar 01;255
-.tgz 01;255
-.arj 01;255
-.taz 01;255
-.lzh 01;255
-.zip 01;255
-.z   01;255
-.Z   01;255
-.gz  01;255
+.tar 01;31 # archives or compressed (bright red)
+.tgz 01;31
+.arj 01;31
+.taz 01;31
+.lzh 01;31
+.zip 01;31
+.z   01;31
+.Z   01;31
+.gz  01;31
 
-# Executables (mint 71)
-EXEC 01;38;5;71 # Files with exec flag
-.cmd 00;38;5;71
-.exe 00;38;5;71
-.com 00;38;5;71
-.btm 00;38;5;71
-.bat 00;38;5;71
+# Executables (Bright Green:82)
+EXEC 01;38;5;82 # Files with exec flag
+.cmd 00;38;5;82
+.exe 00;38;5;82
+.com 00;38;5;82
+.btm 00;38;5;82
+.bat 00;38;5;82
 
-# Image formats (frost blue 73)
-.jpg 00;38;5;73
-.jpeg 00;38;5;73
-.png 00;38;5;73
-.gif 00;38;5;73
-.bmp 00;38;5;73
-.xbm 00;38;5;73
-.xpm 00;38;5;73
-.tif 00;38;5;73
-.tiff 00;38;5;73
+# Image formats (Blue:37)
+.jpg 00;38;5;37
+.jpeg 00;38;5;37
+.png 00;38;5;37
+.gif 00;38;5;37
+.bmp 00;38;5;37
+.xbm 00;38;5;37
+.xpm 00;38;5;37
+.tif 00;38;5;37
+.tiff 00;38;5;37
 
-# Document formats (purple 132)
-.pdf 00;38;5;132
-.odf 00;38;5;132
-.doc 00;38;5;132
-.ppt 00;38;5;132
-.pptx 00;38;5;132
-.db 00;38;5;132
+# Document formats (Molokai Purple: 98)
+.pdf 00;38;5;98
+.odf 00;38;5;98
+.doc 00;38;5;98
+.ppt 00;38;5;98
+.pptx 00;38;5;98
+.db 00;38;5;98
 
-# Audio formats (salmon 131)
-.aac    00;38;5;131
-.au     00;38;5;131
-.flac   00;38;5;131
-.mid    00;38;5;131
-.midi   00;38;5;131
-.mka    00;38;5;131
-.mp3    00;38;5;131
-.mpc    00;38;5;131
-.ogg    00;38;5;131
-.ra     00;38;5;131
-.wav    00;38;5;131
-.m4a    00;38;5;131
+# Audio formats (Molokai Orange: 208)
+.aac    00;38;5;208
+.au     00;38;5;208
+.flac   00;38;5;208
+.mid    00;38;5;208
+.midi   00;38;5;208
+.mka    00;38;5;208
+.mp3    00;38;5;208
+.mpc    00;38;5;208
+.ogg    00;38;5;208
+.ra     00;38;5;208
+.wav    00;38;5;208
+.m4a    00;38;5;208
 # http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
-.axa    00;38;5;131
-.oga    00;38;5;131
-.spx    00;38;5;131
-.xspf   00;38;5;131
+.axa    00;38;5;208
+.oga    00;38;5;208
+.spx    00;38;5;208
+.xspf   00;38;5;208
 
-# Video formats (as audio + bold) (salmon 132)
-.mov    01;38;5;131
-.mpg    01;38;5;131
-.mpeg   01;38;5;131
-.3gp	01;38;5;131
-.m2v    01;38;5;131
-.mkv    01;38;5;131
-.ogm    01;38;5;131
-.mp4    01;38;5;131
-.m4v    01;38;5;131
-.mp4v   01;38;5;131
-.vob    01;38;5;131
-.qt     01;38;5;131
-.nuv    01;38;5;131
-.wmv    01;38;5;131
-.asf    01;38;5;131
-.rm     01;38;5;131
-.rmvb   01;38;5;131
-.flc    01;38;5;131
-.avi    01;38;5;131
-.fli    01;38;5;131
-.flv    01;38;5;131
-.gl     01;38;5;131
-.m2ts   01;38;5;131
-.divx   01;38;5;131
+# Video formats (as audio + bold) (Molokai Orange: 208)
+.mov    01;38;5;208
+.mpg    01;38;5;208
+.mpeg   01;38;5;208
+.3gp	01;38;5;208
+.m2v    01;38;5;208
+.mkv    01;38;5;208
+.ogm    01;38;5;208
+.mp4    01;38;5;208
+.m4v    01;38;5;208
+.mp4v   01;38;5;208
+.vob    01;38;5;208
+.qt     01;38;5;208
+.nuv    01;38;5;208
+.wmv    01;38;5;208
+.asf    01;38;5;208
+.rm     01;38;5;208
+.rmvb   01;38;5;208
+.flc    01;38;5;208
+.avi    01;38;5;208
+.fli    01;38;5;208
+.flv    01;38;5;208
+.gl     01;38;5;208
+.m2ts   01;38;5;208
+.divx   01;38;5;208
 
 # "unimportant" files as logs and backups (base01)
 .log        00;38;5;240
