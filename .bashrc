@@ -15,11 +15,12 @@ if [ "$TERM" != "dumb" ]; then
     alias egrep='egrep --color=auto'              # show differences in colour
     alias fgrep='fgrep --color=auto'              # show differences in colour
 
-    alias ll='ls -l --color=auto'                 # long list
-    alias la='ls -A --color=auto'                 # all but . and ..
-    alias l='ls -CF --color=auto'                 #
-    alias ltr='ls -ltr --color=auto'    
-    alias ls='ls --color'
+
+    alias ll='ls -lF'
+    alias la='ls -AF'                             # all but . and ..
+    alias l='ls -CF'                 
+    alias ltr='ls -ltrF'    
+    alias ls='ls -F'
 fi
 
 alias diskspace='du -S |sort -n -r|more'
