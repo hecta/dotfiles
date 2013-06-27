@@ -102,6 +102,7 @@ let mapleader = " "
 let g:mapleader = " "
 
 nmap <leader>l :set list!<CR>
+map <leader>e :e! $MYVIMRC<CR>
 
 nnoremap j gj
 nnoremap k gk
