@@ -43,6 +43,7 @@ shopt -s histappend
 shopt -s cmdhist
 # Ignore duplicates, ls without options and builtin commands
 HISTCONTROL=ignoredups
+HISTCONTROL=erasedups
 export HISTIGNORE="&:ls:[bf]g:exit"
 
 # Colors
@@ -80,6 +81,8 @@ BG_EGGSHELL="$(tput setab 188)" # Candidate 152
 BG_COLE="$(tput setab 236)"
 
 NC="$(tput sgr0)" # No Color
+
+PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 
 # without timestamp
 PS1='\[$FROSTEDBLUE\][\[$EGGSHELL\]\u\[$FROSTEDBLUE\]@\[$EGGSHELL\]\h \[$FROSTEDBLUE\]\[$PALEVIOLET\]\W\[$FROSTEDBLUE\]]\[$EGGSHELL\]\$\[$NC\] '
