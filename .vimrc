@@ -26,6 +26,10 @@ if has("autocmd")
     autocmd BufNewFile,BufRead *.rss setfiletype xml
 endif
 
+" update title on exit
+"if &term != "builtin_gui"
+    "let &titleold=substitute(getcwd(), $HOME,"~",'')
+"endif
 
 set fileformat=unix
 
