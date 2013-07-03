@@ -10,7 +10,7 @@ set modelines=0
 
 if has("autocmd")
     " Enable file type detection
-    filetype on
+    filetype plugin indent on
 
     " Syntax of these languages is fussy over tabs Vs spaces
     autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab

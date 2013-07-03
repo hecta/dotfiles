@@ -47,49 +47,38 @@ HISTCONTROL=erasedups
 export HISTIGNORE="&:ls:[bf]g:exit"
 
 # Colors
-Black="$(tput setaf 0)"
-BlackBG="$(tput setab 0)"
-DarkGrey="$(tput bold ; tput setaf 0)"
-LightGrey="$(tput setaf 7)"
-LightGreyBG="$(tput setab 7)"
-
-SALMON="$(tput setaf 131)" # Candidates 138, 174, 
-MINT="$(tput setaf 71)"
-PURPLE="$(tput setaf 96)"
-INDIANRED="$(tput setaf 88)" # Candidate 167
-PALEVIOLET="$(tput setaf 132)" # Candidate 95
-FROSTEDBLUE="$(tput setaf 73)" # Candidate 109
-EGGSHELL="$(tput setaf 188)" # Candidate 152
-COLE="$(tput setaf 236)"
-
-B_SALMON="$(tput bold ; tput setaf 131)" # Candidates 138, 174, 
-B_MINT="$(tput bold ; tput setaf 71)"
-B_PURPLE="$(tput bold ; tput setaf 96)"
-B_INDIANRED="$(tput bold ; tput setaf 88)" # Candidate 167
-B_PALEVIOLET="$(tput bold ; tput setaf 132)" # Candidate 95
-B_FROSTEDBLUE="$(tput bold ; tput setaf 73)" # Candidate 109
-B_EGGSHELL="$(tput bold ; tput setaf 188)" # Candidate 152
-B_COLE="$(tput bold ; tput setaf 236)"
-
-BG_SALMON="$(tput setab 131)" # Candidates 138, 174, 
-BG_MINT="$(tput setab 71)"
-BG_PURPLE="$(tput setab 96)"
-BG_INDIANRED="$(tput setab 88)" # Candidate 167
-BG_PALEVIOLET="$(tput setab 132)" # Candidate 95
-BG_FROSTEDBLUE="$(tput setab 73)" # Candidate 109
-BG_EGGSHELL="$(tput setab 188)" # Candidate 152
-BG_COLE="$(tput setab 236)"
-
-NC="$(tput sgr0)" # No Color
+RS="\[\033[0m\]"    # reset
+HC="\[\033[1m\]"    # hicolor
+UL="\[\033[4m\]"    # underline
+INV="\[\033[7m\]"   # inverse background and foreground
+FBLK="\[\033[30m\]" # foreground black
+FRED="\[\033[31m\]" # foreground red
+FGRN="\[\033[32m\]" # foreground green
+FYEL="\[\033[33m\]" # foreground yellow
+FBLE="\[\033[34m\]" # foreground blue
+FMAG="\[\033[35m\]" # foreground magenta
+FCYN="\[\033[36m\]" # foreground cyan
+FWHT="\[\033[37m\]" # foreground white
+BBLK="\[\033[40m\]" # background black
+BRED="\[\033[41m\]" # background red
+BGRN="\[\033[42m\]" # background green
+BYEL="\[\033[43m\]" # background yellow
+BBLE="\[\033[44m\]" # background blue
+BMAG="\[\033[45m\]" # background magenta
+BCYN="\[\033[46m\]" # background cyan
+BWHT="\[\033[47m\]" # background white
 
 PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 
+#PS1="$HC$FYEL[ $FBLE${debian_chroot:+($debian_chroot)}\u$FYEL: $FBLE\w $FYEL]\\$ $RS"
+PS1="$INV ${debian_chroot:+($debian_chroot)}\u@\h $RS $FYEL\w$RS \\$ "
+
 # without timestamp
-PS1='\[$FROSTEDBLUE\][\[$EGGSHELL\]\u\[$FROSTEDBLUE\]@\[$EGGSHELL\]\h \[$FROSTEDBLUE\]\[$PALEVIOLET\]\W\[$FROSTEDBLUE\]]\[$EGGSHELL\]\$\[$NC\] '
+#PS1='\[$FROSTEDBLUE\][\[$EGGSHELL\]\u\[$FROSTEDBLUE\]@\[$EGGSHELL\]\h \[$FROSTEDBLUE\]\[$PALEVIOLET\]\W\[$FROSTEDBLUE\]]\[$EGGSHELL\]\$\[$NC\] '
 # with timestamp
 #PS1='\[$FROSTEDBLUE\][\[$EGGSHELL\]\A\[$FROSTEDBLUE\]]\[$FROSTEDBLUE\][\[$EGGSHELL\]\u\[$FROSTEDBLUE\]@\[$EGGSHELL\]\h \[$FROSTEDBLUE\]\[$PALEVIOLET\]\W\[$FROSTEDBLUE\]]\[$EGGSHELL\]\$\[$NC\] '
 #PS1='\[$FROSTEDBLUE\][\[$EGGSHELL\]\A\[$FROSTEDBLUE\]] \[$EGGSHELL\]\u\[$FROSTEDBLUE\]@\[$EGGSHELL\]\h \[$FROSTEDBLUE\][\[$SALMON\]\W\[$FROSTEDBLUE\]] [\]\[$EGGSHELL\]\$\[$FROSTEDBLUE\]]\[$NC\] '
 #PS1='\[$FROSTEDBLUE\][\[$EGGSHELL\]\A\[$FROSTEDBLUE\]] \[$FROSTEDBLUE\][\[$EGGSHELL\]\u\[$FROSTEDBLUE\]@\[$EGGSHELL\]\h\[$FROSTEDBLUE\]] \[$FROSTEDBLUE\][\[$SALMON\]\W\[$FROSTEDBLUE\]] [\]\[$EGGSHELL\]\$\[$FROSTEDBLUE\]] \[$NC\] '
 #PS1='\[$EGGSHELL\][\t] \[$FROSTEDBLUE\]\u@\h \[$SALMON\]\W\[$NC\]\[$EGGSHELL\] \$\[$NC\] '
-#PS1='\[$LightBlue\]\u@\h [\W]\$\[$NC\] '
 #PS1='\[\e[41m\]\[\e[1;37m\] \u \[\e[47m\]\[\e[1;30m\] \W \[\e[0m\]\[\e[1;37m\]\[\e[42m\] # \[\e[0m\] @ \[\e[41m\]\[\e[1;33m\]\h\[\033[0m\033[0;32m\] ▶\[\033[0m\] ' 
+#PS1='\[\e[30;47m\] \u@\h \[\e[0m\] \[\e[33m\]\w\[\e0\] \\$ '
