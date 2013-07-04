@@ -71,7 +71,8 @@ BWHT="\[\033[47m\]" # background white
 PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 
 #PS1="$HC$FYEL[ $FBLE${debian_chroot:+($debian_chroot)}\u$FYEL: $FBLE\w $FYEL]\\$ $RS"
-PS1="$INV ${debian_chroot:+($debian_chroot)}\u@\h $RS $FYEL\w$RS \\$ "
+#PS1="$INV ${debian_chroot:+($debian_chroot)}\u@\h $RS $FYEL\w$RS \\$ "
+PS1="[$FYEL\w$RS]$FWHT\\$ $RS"
 
 # without timestamp
 #PS1='\[$FROSTEDBLUE\][\[$EGGSHELL\]\u\[$FROSTEDBLUE\]@\[$EGGSHELL\]\h \[$FROSTEDBLUE\]\[$PALEVIOLET\]\W\[$FROSTEDBLUE\]]\[$EGGSHELL\]\$\[$NC\] '
