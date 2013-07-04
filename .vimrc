@@ -113,7 +113,7 @@ nnoremap k gk
 
 imap jk <Esc>
 
-colorscheme cottonmouse
+colorscheme bubblegum
 "colorscheme molokai
 hi NonText guifg=#393c3d
 hi SpecialKey guifg=#393c3d
