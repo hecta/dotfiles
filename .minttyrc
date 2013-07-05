@@ -1,7 +1,7 @@
 Term=xterm-256color
 CursorColour=255,175,0
 IMECursorColour=128,224,160
-BoldAsFont=yes
+BoldAsFont=no
 Locale=C
 Charset=UTF-8
 Font=DejaVu Sans Mono
@@ -25,3 +25,4 @@ White=207,207,207
 BoldWhite=255,255,255
 Transparency=low
 OpaqueWhenFocused=yes
+BoldAsColour=yes
