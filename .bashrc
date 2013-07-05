@@ -9,29 +9,6 @@
 alias rm='rm -i'
 alias mv='mv -i'
 
-LS=" --color=auto"
-
-case $(uname -s) in
-    Darwin|FreeBSD|OpenBSD) LS="";;
-    *) ;;
-esac
-
-if [ "$TERM" != "dumb" ]; then
-    [ -e "$HOME/.dircolors" ] && DIR_COLORS="$HOME/.dircolors"
-    [ -e "$DIR_COLORS" ] || DIR_COLORS=""
-    eval "`dircolors -b $DIR_COLORS`"
-    alias grep='grep $LS'                     # show differences in colour
-    alias egrep='egrep $LS'              # show differences in colour
-    alias fgrep='fgrep $LS'              # show differences in colour
-
-
-    alias ll='ls -lF$LS'
-    alias la='ls -AF $LS'                             # all but . and ..
-    alias l='ls -CF $LS'                 
-    alias ltr='ls -ltrF $LS'    
-    alias ls='ls -F $LS'
-fi
-
 alias diskspace='du -S |sort -n -r|more'
 alias folders='find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn'
 
@@ -47,7 +24,7 @@ HISTCONTROL=erasedups
 export HISTIGNORE="&:ls:[bf]g:exit"
 
 # Colors
-RS="\[\033[0m\]"    # reset
+RS="\[\034[0m\]"    # reset
 HC="\[\033[1m\]"    # hicolor
 UL="\[\033[4m\]"    # underline
 INV="\[\033[7m\]"   # inverse background and foreground
@@ -68,11 +45,41 @@ BMAG="\[\033[45m\]" # background magenta
 BCYN="\[\033[46m\]" # background cyan
 BWHT="\[\033[47m\]" # background white
 
-PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+RC="$(tput sgr0)"
+
+# prompt
+PS1="[$FYEL\w$RS]$FWHT\\$ $RS"
+
+LS=" --color=auto"
+
+case $(uname -s) in
+    Darwin|FreeBSD|OpenBSD) LS="";;
+    CYGWIN_NT-6.2-WOW64)
+        PS1="$INV\u@\h$RC [$FYEL\w$RC]$FWHT\\$ $RC";;
+        #PS1="$INV \u@\h $RS[$FYEL\w$RS]$FWHT\\$ $RS";;
+    *) ;;
+esac
+
+if [ "$TERM" != "dumb" ]; then
+    [ -e "$HOME/.dircolors" ] && DIR_COLORS="$HOME/.dircolors"
+    [ -e "$DIR_COLORS" ] || DIR_COLORS=""
+    eval "`dircolors -b $DIR_COLORS`"
+    alias grep='grep $LS'                     # show differences in colour
+    alias egrep='egrep $LS'              # show differences in colour
+    alias fgrep='fgrep $LS'              # show differences in colour
+
+
+    alias ll='ls -lF$LS'
+    alias la='ls -AF $LS'                             # all but . and ..
+    alias l='ls -CF $LS'                 
+    alias ltr='ls -ltrF $LS'    
+    alias ls='ls -F $LS'
+fi
+
+#PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 
 #PS1="$HC$FYEL[ $FBLE${debian_chroot:+($debian_chroot)}\u$FYEL: $FBLE\w $FYEL]\\$ $RS"
 #PS1="$INV ${debian_chroot:+($debian_chroot)}\u@\h $RS $FYEL\w$RS \\$ "
-PS1="[$FYEL\w$RS]$FWHT\\$ $RS"
 
 # without timestamp
 #PS1='\[$FROSTEDBLUE\][\[$EGGSHELL\]\u\[$FROSTEDBLUE\]@\[$EGGSHELL\]\h \[$FROSTEDBLUE\]\[$PALEVIOLET\]\W\[$FROSTEDBLUE\]]\[$EGGSHELL\]\$\[$NC\] '
