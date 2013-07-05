@@ -48,6 +48,7 @@ BWHT="\[\033[47m\]" # background white
 RC="$(tput sgr0)"
 
 # prompt
+PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 PS1="[$FYEL\w$RC]$FWHT\\$ $RC"
 
 LS=" --color=auto"
@@ -76,7 +77,6 @@ if [ "$TERM" != "dumb" ]; then
     alias ls='ls -F $LS'
 fi
 
-#PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 
 #PS1="$HC$FYEL[ $FBLE${debian_chroot:+($debian_chroot)}\u$FYEL: $FBLE\w $FYEL]\\$ $RS"
 #PS1="$INV ${debian_chroot:+($debian_chroot)}\u@\h $RS $FYEL\w$RS \\$ "
