@@ -1,0 +1,22 @@
+
+CursorColour = 255, 175, 0
+IMECursorColour = 128, 224, 160
+
+BackgroundColour: #1d1f21
+ForegroundColour: #ddccbb
+Black: #222222
+BoldBlack: #666666
+Red:  #cc4747
+BoldRed:  #bf5858
+Green:  #a0cf5d
+BoldGreen: #b8d68c
+Yellow:  #e0a524
+BoldYellow: #edB85c
+Blue:  #4194d9
+BoldBlue: #60aae6
+Magenta:  #cc2f6e
+BoldMagenta: #db588c
+Cyan:  #6d878d
+BoldCyan:  #42717b
+White:  #dedede
+BoldWhite: #f2f2f2
