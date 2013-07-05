@@ -48,7 +48,7 @@ BWHT="\[\033[47m\]" # background white
 RC="$(tput sgr0)"
 
 # prompt
-PS1="[$FYEL\w$RS]$FWHT\\$ $RS"
+PS1="[$FYEL\w$RC]$FWHT\\$ $RC"
 
 LS=" --color=auto"
 
