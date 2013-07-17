@@ -75,7 +75,6 @@ set title                                                          " change the 
 
 set ofu=syntaxcomplete#Complete                                    " Omnicompletion
 set foldmethod=manual                                              " Folding method [manual; indent; expr; marker; syntax; diff]
-"set background=dark
 "set lines=50                                                       " Default lines (height)
 "set columns=120                                                    " Default columns (width)
 set scrolloff=3                                                    " Minimal number of screen lines, offset
@@ -113,13 +112,15 @@ nnoremap k gk
 
 imap jk <Esc>
 
-colorscheme bubblegum
+"colorscheme bubblegum
 "colorscheme molokai
-hi NonText guifg=#393c3d
-hi SpecialKey guifg=#393c3d
+"hi NonText guifg=#393c3d
+"hi SpecialKey guifg=#393c3d
 "
 " Set colorscheme to solarized
-"colorscheme solarized
+colorscheme solarized
+set background=light
+call togglebg#map("<F11>")
 "function! SetSolarizedBackground()
 "    if strftime("%H") >= 5 && strftime("%H") < 17
 "        if &background != 'light'

@@ -46,10 +46,11 @@ BCYN="\[\033[46m\]" # background cyan
 BWHT="\[\033[47m\]" # background white
 
 RC="\[$(tput sgr0)\]"
+BLD="\[$(tput bold)\]"
 
 # prompt
 PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
-PS1="[$FYEL\w$RC]$FWHT\\$ $RC"
+PS1="[$BLD\w$RC]$FMAG\\$ $RC"
 
 LS=" --color=auto"
 
