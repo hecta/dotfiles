@@ -57,7 +57,7 @@ LS=" --color=auto"
 case $(uname -s) in
     Darwin|FreeBSD|OpenBSD) LS="";;
     CYGWIN_NT-6.2-WOW64)
-        PS1="$INV\u@\h$RC [$FYEL\w$RC]$FWHT\\$ $RC";;
+        PS1="$INV\u@\h$RC [$BLD\w$RC]$FMAG\\$ $RC";;
         #PS1="$INV \u@\h $RS[$BLD\w$RS]$FMAG\\$ $RS";;
     *) ;;
 esac
