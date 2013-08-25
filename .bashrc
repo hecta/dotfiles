@@ -12,6 +12,9 @@ alias mv='mv -i'
 alias diskspace='du -S |sort -n -r|more'
 alias folders='find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn'
 
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
 # 10k lines history
 export HISTFILESIZE=20000
 export HISTSIZE=10000
@@ -50,7 +53,11 @@ BLD="\[$(tput bold)\]"
 
 # prompt
 PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+
 PS1="[$BLD\w$RC]$FMAG\\$ $RC"
+if [ -f /etc/bash_completion ]; then
+    PS1="[$BLD\w$RC]$FBLE\$(__git_ps1)$FMAG\\$ $RC"
+fi
 
 LS=" --color=auto"
 
